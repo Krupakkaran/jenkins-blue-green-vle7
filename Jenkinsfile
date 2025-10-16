@@ -14,7 +14,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 // Clones the current repository
-                git 'https://github.com/Krupakkaran/sample-java-app.git'
+                git 'https://github.com/Krupakkaran/jenkins-blue-green-vle7.git'
             }
         }
         stage('Build Artifact & Docker Image') {
