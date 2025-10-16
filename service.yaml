@@ -1,0 +1,15 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  # Use LoadBalancer for external access on AWS/EKS, or NodePort for testing
+  type: LoadBalancer 
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: myapp
+    color: blue  # <-- CRITICAL: Initial selector. Jenkins will change this to 'green' during the switch.
